@@ -152,13 +152,11 @@ You can reach us via the following channels:
 
 This is a monorepo that contains the following components:
 
-| Name   | Path                 | Description                                                                                                     |
-| ------ | -------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Runner | `./apps/runner`      | The core of Connery that knows how to handle plugins, run actions, and provide a standardized API as an output. |
-| Docs   | `./apps/docs`        | The [documentation](https://docs.connery.io/) website.                                                          |
-| CLI    | `./packages/connery` | [`connery`](https://www.npmjs.com/package/connery) CLI package for plugin development.                          |
-| SDK    | `./packages/sdk`     | [`@connery-io/sdk`](https://www.npmjs.com/package/@connery-io/sdk) SDK package for plugin development.          |
-| Lib    | `./packages/lib`     | Shared library for the runner and the CLI.                                                                      |
+| Name | Path             | Description                                                                                            |
+| ---- | ---------------- | ------------------------------------------------------------------------------------------------------ |
+| Docs | `./apps/docs`    | The [documentation](https://docs.connery.io/) website.                                                 |
+| CLI  | `./packages/cli` | [`connery`](https://www.npmjs.com/package/connery) CLI package for plugin development.                 |
+| SDK  | `./packages/sdk` | [`@connery-io/sdk`](https://www.npmjs.com/package/@connery-io/sdk) SDK package for plugin development. |
 
 ## 👨‍💻 Contributing
 

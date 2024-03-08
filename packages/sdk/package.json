@@ -1,16 +1,84 @@
 {
-  "name": "@connery-io/sdk",
-  "description": "Connery SDK",
+  "name": "connery",
+  "description": "Connery SDK and CLI",
   "version": "0.0.16",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "dependencies": {},
-  "devDependencies": {
-    "tsconfig": "*"
-  },
+  "type": "module",
+  "main": "./dist/sdk.js",
+  "module": "./dist/sdk.js",
+  "types": "./dist/sdk.d.ts",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc -w"
+    "dev": "tsc -w",
+    "build": "tsc && copyfiles -u 1 ./src/api/static/* ./dist",
+    "test": "jest --passWithNoTests",
+    "format": "prettier --write .",
+    "lint": "eslint src/**/*.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.4.3",
+    "@nestjs/config": "^2.3.4",
+    "@nestjs/core": "^9.4.3",
+    "@nestjs/platform-express": "^9.4.3",
+    "@nestjs/serve-static": "^4.0.1",
+    "@nestjs/swagger": "^7.3.0",
+    "copyfiles": "^2.4.1",
+    "openapi-types": "^12.1.3",
+    "reflect-metadata": "^0.1.13",
+    "zod": "^3.22.3",
+    "zod-validation-error": "^1.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "28.1.8",
+    "@types/node": "^16.18.36",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "28.1.3",
+    "prettier": "^2.8.8",
+    "source-map-support": "^0.5.21",
+    "supertest": "^6.3.3",
+    "ts-jest": "28.0.8",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.1",
+    "tsconfig": "*",
+    "tsconfig-paths": "4.1.0",
+    "typescript": "^4.9.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/*.test.ts"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./packages/sdk/tsconfig.json",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint/eslint-plugin"
+    ],
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "root": true,
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "rules": {
+      "@typescript-eslint/no-explicit-any": "off"
+    }
   }
 }

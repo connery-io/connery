@@ -1,9 +1,0 @@
-services:
-  runner:
-    build:
-      context: .
-      dockerfile: ./apps/runner/Dockerfile
-    ports:
-      - 4301:4201
-    env_file:
-      - .env

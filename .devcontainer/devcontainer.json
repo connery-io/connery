@@ -2,22 +2,10 @@
   "name": "Connery",
   "image": "mcr.microsoft.com/devcontainers/typescript-node",
   "postStartCommand": "./.devcontainer/post-start-commands.sh",
-  "forwardPorts": [4040, 4201, 4202, 9229],
+  "forwardPorts": [4202],
   "portsAttributes": {
-    "4040": {
-      "label": "ngrok",
-      "onAutoForward": "silent"
-    },
-    "4201": {
-      "label": "Runner",
-      "onAutoForward": "silent"
-    },
     "4202": {
       "label": "Docs",
-      "onAutoForward": "silent"
-    },
-    "9229": {
-      "label": "Runner Debugger",
       "onAutoForward": "silent"
     },
     "default": {
