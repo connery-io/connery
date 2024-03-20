@@ -1,5 +1,6 @@
 import { ActionDefinition, InputParametersObject } from '@connery-io/sdk';
 import { ActionRuntime, PluginRuntime } from 'lib';
+import { ApiProperty } from '@nestjs/swagger';
 
 //
 // API generic response types
@@ -79,14 +80,18 @@ export function convertAction(action: ActionRuntime): ActionResponseType {
 }
 
 //
-// API request types
+// DTOs
 //
 
-export type IdentifyActionRequest = {
-  prompt: string;
-};
+export class IdentifyActionRequest {
+  @ApiProperty({ example: 'Clean a plugin cache on the runner' })
+  prompt!: string;
+}
 
-export type RunActionRequest = {
+export class RunActionRequest {
+  @ApiProperty()
   prompt?: string;
+
+  @ApiProperty()
   input?: InputParametersObject;
-};
+}

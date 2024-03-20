@@ -8,13 +8,13 @@ import { ClientsApiModule } from './clients-api/clients-api.module';
 
 @Module({
   imports: [
+    ClientsApiModule,
+    AdminApiModule,
+    HealthModule,
     ConfigModule.forRoot({
       load: [config],
     }),
-    HealthModule,
     SharedModule,
-    AdminApiModule,
-    ClientsApiModule,
   ],
 })
 export class AppModule {}
